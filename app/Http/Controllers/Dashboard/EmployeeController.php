@@ -47,6 +47,11 @@ class EmployeeController extends Controller
         return $this->Employee->destroy($request);
     }
 
+    public function print()
+    {
+        return  $this->Employee->print();
+    }
+
     public function update_status_e(Request $request)
     {
         $this->validate($request, [

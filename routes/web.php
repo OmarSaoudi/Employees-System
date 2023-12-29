@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('departements', DepartementController::class);
     Route::resource('employees', EmployeeController::class);
+    Route::get('/print_employees', [EmployeeController::class, 'print'])->name('employees.print');
     Route::post('update_status_e', [EmployeeController::class, 'update_status_e'])->name('update_status_e');
 });
 

@@ -46,7 +46,6 @@ class EmployeeRepository implements EmployeeRepositoryInterface
             $employee->departement_id = $request->departement_id;
             $employee->description = $request->description;
             $employee->status = 1;
-
             $employee->save();
 
             // insert pivot tABLE
@@ -138,6 +137,12 @@ class EmployeeRepository implements EmployeeRepositoryInterface
                return redirect()->route('Employees.index');
            }
 
+    }
+
+    public function print()
+    {
+      $employees = Employee::all();
+      return view('Dashboard.employees.print_employees', compact('employees'));
     }
 
     public function update_status_e($request)

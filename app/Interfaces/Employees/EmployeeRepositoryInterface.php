@@ -23,6 +23,9 @@ interface EmployeeRepositoryInterface
      // destroy Employee
      public function destroy($request);
 
+     // print
+     public function print();
+
      // update_status_e
      public function update_status_e($request);
 
