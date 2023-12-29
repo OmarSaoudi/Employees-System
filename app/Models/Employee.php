@@ -12,9 +12,9 @@ class Employee extends Model
 
     public $fillable= ['name','email','date_birth','phone','address','description','status'];
 
-    public function departement()
+    public function department()
     {
-        return $this->belongsTo(Departement::class);
+        return $this->belongsTo(Department::class);
     }
 
     public function image(): MorphOne

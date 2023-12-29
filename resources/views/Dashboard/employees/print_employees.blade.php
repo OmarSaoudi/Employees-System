@@ -34,9 +34,21 @@
     <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header">
+            <br>
+            <div class="pull-left">
+            <h5 class="box-title">Company Name : {{ $settings[0]->name }}</h5>
+            <h6 class="box-title">Company Email : {{ $settings[0]->email }}</h6>
+            <h6 class="box-title">Company Phone : {{ $settings[0]->phone }}</h6>
+            <h6 class="box-title">Company Address : {{ $settings[0]->address }}</h6>
+            </div>
+            <div class="pull-right">
+            <img src="{{ URL::asset('Dashboard/assets/dist/img/gallery.jpg') }}" style="border-radius:50%" width="100px" height="100px" alt="User Image">
+            </div><br><br><br><br><br>
             <!-- /.box-header -->
             <div class="box-body">
+                <div style="text-align: center">
+                    <h4 class="box-title"><b>Employees List</b></h4>
+                </div>
               <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -44,10 +56,9 @@
                   <th>Image</th>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Departement</th>
+                  <th>Department</th>
                   <th>Phone</th>
                   <th>Address</th>
-                  <th>Status</th>
                   <th>Created at</th>
                 </tr>
                 </thead>
@@ -65,12 +76,9 @@
                   </td>
                   <td>{{ $employee->name }}</td>
                   <td>{{ $employee->email }}</td>
-                  <td>{{ $employee->departement->name }}</td>
+                  <td>{{ $employee->department->name }}</td>
                   <td>{{ $employee->phone }}</td>
                   <td>{{ $employee->address }}</td>
-                  <td>
-                      {{ $employee->status == 1 ? 'Active' : 'Inactive' }}
-                  </td>
                   <td>{{ $employee->created_at }}</td>
                 </tr>
                 @endforeach
@@ -82,8 +90,8 @@
           <!-- /.box -->
         </div>
         <!-- /.col -->
-      </div>
-      <!-- /.row -->
+    </div>
+    <!-- /.row -->
     <div class="row no-print">
       <div class="col-xs-12">
         <a href="{{ route('employees.index') }}" id="print_Button" class="btn btn-warning"><i class="fa fa-undo"></i> Back</a>

@@ -16,9 +16,9 @@
         <li class="header">MAIN NAVIGATION</li>
         <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="header">MASTER</li>
-        <li><a href="{{ route('departements.index') }}"><i class="fa fa-building-o"></i> <span>Departement</span></a></li>
+        <li><a href="{{ route('departments.index') }}"><i class="fa fa-building-o"></i> <span>Department</span></a></li>
         <li><a href="{{ route('employees.index') }}"><i class="fa fa-users"></i> <span>Employees</span></a></li>
-        <li><a href=""><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+        <li><a href="{{ route('settings.index') }}"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

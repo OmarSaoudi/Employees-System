@@ -5,7 +5,13 @@
 @stop
 
 @section('css')
-
+<style>
+    @media print {
+        #print_Button {
+            display: none;
+        }
+    }
+</style>
 @endsection
 
 @section('content')
@@ -22,7 +28,7 @@
     </ol>
   </section>
   <!-- Main content -->
-  <section class="content">
+  <section class="content" id="print">
     <div class="row">
       <div class="col-xs-12">
         <div class="box">
@@ -41,7 +47,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Date Of Birth</th>
-                <th>Departement</th>
+                <th>Department</th>
                 <th>Phone</th>
                 <th>Address</th>
                 <th>Day</th>
@@ -68,18 +74,14 @@
                 <td>{{ $employee->name }}</td>
                 <td>{{ $employee->email }}</td>
                 <td>{{ $employee->date_birth }}</td>
-                <td>{{ $employee->departement->name }}</td>
+                <td>{{ $employee->department->name }}</td>
                 <td>{{ $employee->phone }}</td>
                 <td>{{ $employee->address }}</td>
-                <td>
-                    {{ $employee->day->pluck('name')->join(', ') }}
-                </td>
+                <td>{{ $employee->day->pluck('name')->join(', ') }}</td>
                 <td>{{ $employee->gender->name }}</td>
                 <td>{{ $employee->blood->name }}</td>
+                <td>{{ $employee->status == 1 ? 'Active' : 'Inactive' }}</td>
                 <td>{{ $employee->description }}</td>
-                <td>
-                    {{ $employee->status == 1 ? 'Active' : 'Inactive' }}
-                </td>
                 <td>{{ $employee->created_at->diffForHumans() }}</td>
                 <td>
                     <a href="{{ route('employees.edit', $employee->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>

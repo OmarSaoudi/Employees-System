@@ -3,10 +3,11 @@ namespace App\Repository\Employees;
 
 use App\Interfaces\Employees\EmployeeRepositoryInterface;
 use App\Models\Day;
-use App\Models\Departement;
+use App\Models\Department;
 use App\Models\Employee;
 use App\Models\Gender;
 use App\Models\Blood;
+use App\Models\Setting;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Facades\DB;
 
@@ -25,9 +26,9 @@ class EmployeeRepository implements EmployeeRepositoryInterface
     {
         $bloods = Blood::all();
         $genders = Gender::all();
-        $departements = Departement::all();
+        $departments = Department::all();
         $days = Day::all();
-        return view('Dashboard.employees.add',compact('bloods','genders','departements','days'));
+        return view('Dashboard.employees.add',compact('bloods','genders','departments','days'));
     }
 
     public function store($request) {
@@ -43,7 +44,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface
             $employee->address = $request->address;
             $employee->gender_id = $request->gender_id;
             $employee->blood_id = $request->blood_id;
-            $employee->departement_id = $request->departement_id;
+            $employee->department_id = $request->department_id;
             $employee->description = $request->description;
             $employee->status = 1;
             $employee->save();
@@ -68,10 +69,10 @@ class EmployeeRepository implements EmployeeRepositoryInterface
     {
         $bloods = Blood::all();
         $genders = Gender::all();
-        $departements = Departement::all();
+        $departments = Department::all();
         $days = Day::all();
         $employees = Employee::findorfail($id);
-        return view('Dashboard.employees.edit',compact('bloods','genders','departements','days','employees'));
+        return view('Dashboard.employees.edit',compact('bloods','genders','departments','days','employees'));
     }
 
     public function update($request)
@@ -88,7 +89,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface
             $employee->address = $request->address;
             $employee->gender_id = $request->gender_id;
             $employee->blood_id = $request->blood_id;
-            $employee->departement_id = $request->departement_id;
+            $employee->department_id = $request->department_id;
             $employee->description = $request->description;
             $employee->day()->sync($request->day);
             $employee->save();
@@ -141,8 +142,9 @@ class EmployeeRepository implements EmployeeRepositoryInterface
 
     public function print()
     {
+      $settings = Setting::where('id',1)->get();
       $employees = Employee::all();
-      return view('Dashboard.employees.print_employees', compact('employees'));
+      return view('Dashboard.employees.print_employees', compact('employees','settings'));
     }
 
     public function update_status_e($request)

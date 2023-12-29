@@ -108,11 +108,11 @@
                         <div class="row">
                             <div class="col-md-6">
                               <div class="form-group">
-                                 <label>Departements</label>
-                                 <select name="departement_id" class="form-control"  required>
-                                    <option value="" selected disabled>Select Departement</option>
-                                    @foreach ($departements as $departement)
-                                        <option value="{{ $departement->id }}"> {{ $departement->name }}</option>
+                                 <label>Departments</label>
+                                 <select name="department_id" class="form-control"  required>
+                                    <option value="" selected disabled>Select Department</option>
+                                    @foreach ($departments as $department)
+                                        <option value="{{ $department->id }}"> {{ $department->name }}</option>
                                     @endforeach
                                  </select>
                                  <span class="help-block with-errors"></span>

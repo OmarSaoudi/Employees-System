@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('address');
             $table->foreignId('gender_id')->references('id')->on('genders')->onDelete('cascade');
             $table->foreignId('blood_id')->references('id')->on('bloods')->onDelete('cascade');
-            $table->foreignId('departement_id')->references('id')->on('departements')->onDelete('cascade');
+            $table->foreignId('department_id')->references('id')->on('departments')->onDelete('cascade');
             $table->text('description')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
