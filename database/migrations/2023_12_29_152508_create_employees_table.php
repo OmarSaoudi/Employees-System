@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
+            $table->string('name');
             $table->string('email')->unique();
             $table->date('date_birth');
             $table->string('phone');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignId('gender_id')->references('id')->on('genders')->onDelete('cascade');
             $table->foreignId('blood_id')->references('id')->on('bloods')->onDelete('cascade');
             $table->foreignId('departement_id')->references('id')->on('departements')->onDelete('cascade');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

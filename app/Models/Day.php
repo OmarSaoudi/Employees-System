@@ -11,8 +11,8 @@ class Day extends Model
 
     public $fillable= ['name'];
 
-    public function doctor()
+    public function employee()
     {
-        return $this->belongsToMany(Doctor::class,'doctor_day');
+        return $this->belongsToMany(Employee::class,'employee_day');
     }
 }

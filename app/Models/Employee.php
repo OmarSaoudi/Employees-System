@@ -10,7 +10,7 @@ class Employee extends Model
 {
     use HasFactory;
 
-    public $fillable= ['name','email','date_birth','phone','address','status'];
+    public $fillable= ['name','email','date_birth','phone','address','description','status'];
 
     public function departement()
     {
