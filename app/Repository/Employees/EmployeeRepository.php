@@ -140,7 +140,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface
 
     }
 
-    public function update_status_d($request)
+    public function update_status_e($request)
     {
         try {
             $employee = Employee::findorfail($request->id);

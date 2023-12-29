@@ -23,7 +23,7 @@ interface EmployeeRepositoryInterface
      // destroy Employee
      public function destroy($request);
 
-     // update_status_d
+     // update_status_e
      public function update_status_e($request);
 
 }

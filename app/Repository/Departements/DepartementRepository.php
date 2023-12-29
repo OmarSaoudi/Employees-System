@@ -1,7 +1,7 @@
 <?php
 namespace App\Repository\Departements;
 
-use App\Interfaces\Departements\CategoryRepositoryInterface;
+use App\Interfaces\Departements\DepartementRepositoryInterface;
 use App\Models\Employee;
 use App\Models\Departement;
 use Illuminate\Support\Facades\DB;

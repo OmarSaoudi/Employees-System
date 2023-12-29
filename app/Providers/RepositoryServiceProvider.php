@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Interfaces\Categories\DepartementRepositoryInterface;
-use App\Interfaces\Products\EmployeeRepositoryInterface;
-use App\Repository\Categories\DepartementRepository;
-use App\Repository\Products\EmployeeRepository;
+use App\Interfaces\Departements\DepartementRepositoryInterface;
+use App\Interfaces\Employees\EmployeeRepositoryInterface;
+use App\Repository\Departements\DepartementRepository;
+use App\Repository\Employees\EmployeeRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
